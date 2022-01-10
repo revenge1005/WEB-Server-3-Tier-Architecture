@@ -215,6 +215,4 @@ systemctl restart httpd
 cat /var/log/httpd/mod_jk.log
 ```
 
-사진 (1)
-
-사진 (2)
+![02](https://user-images.githubusercontent.com/42735894/148755148-1e01c942-9fa3-4cb3-b753-12e903e4fd09.PNG)
