@@ -69,7 +69,7 @@ yum -y install php php-cli php-fpm php-mysqlnd php-zip php-pdo php-devel php-odb
 vim /etc/php-fpm.d/www.conf
 
 listen = 9000
-listen.allowed_clients = 192.168.219.101
+listen.allowed_clients = 192.168.219.100
 ```
 
 ```
