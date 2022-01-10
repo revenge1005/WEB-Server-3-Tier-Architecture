@@ -206,9 +206,9 @@ systemctl restart httpd
 cat /var/log/httpd/mod_jk.log
 ```
 
-사진 (1)
+![01](https://user-images.githubusercontent.com/42735894/148754837-9baa2b90-7bb4-488c-91b1-b7285180b88c.PNG)
 
-사진 (2)
+![02](https://user-images.githubusercontent.com/42735894/148754844-5e11c276-6d94-475e-9cc0-92f9fc440434.PNG)
 
 <br>
 
@@ -302,4 +302,4 @@ vim /usr/local/tomcat9/webapps/source/db.jsp
 </html>
 ```
 
-사진 (3)
+![03](https://user-images.githubusercontent.com/42735894/148754900-d6065249-5203-43a9-b1a0-45d45af3a6e2.PNG)
