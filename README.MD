@@ -17,9 +17,6 @@
 #### (3) Apache, Tomcat, DB
 ![tomcat 01](https://user-images.githubusercontent.com/42735894/148756179-f4174986-56db-4a51-8ecd-2347b972ca24.PNG)
 
-#### (4) Nginx, Tomcat, DB
-![tomcat 02](https://user-images.githubusercontent.com/42735894/148756220-2d453cef-9dfe-461b-8de7-95d13a13ac01.PNG)
-
 <br>
 
 ----
@@ -34,6 +31,3 @@
 
 #### (3) Apache, Tomcat, DB
 ![tomcat 03](https://user-images.githubusercontent.com/42735894/148756366-449c1ffe-1bdd-4310-af73-a7366394f441.PNG)
-
-#### (4) Nginx, Tomcat, DB
-![tomcat 04](https://user-images.githubusercontent.com/42735894/148756370-3a569360-640e-4a31-bde0-0c4ad34d9f91.PNG)
