@@ -31,6 +31,31 @@ worker.tomcat1.port=8009
 ```
 
 ```
+vim /etc/apache2/mods-available/httpd-jk.conf
+
+<IfModule jk_module>
+
+    JkWorkersFile /etc/libapache2-mod-jk/workers.properties
+
+    JkLogFile /var/log/apache2/mod_jk.log
+
+    JkLogLevel info
+
+    JkShmFile /var/log/apache2/jk-runtime-status
+
+#    <Location /jk-status>
+#        JkMount jk-status
+#        Require ip 127.0.0.1
+#    </Location>
+#    <Location /jk-manager>
+#        JkMount jk-manager
+#        Require ip 127.0.0.1
+#    </Location>
+
+</IfModule>
+```
+
+```
 vim /etc/apache2/sites-available/000-default.conf
 
 <VirtualHost *:80>
@@ -42,12 +67,6 @@ vim /etc/apache2/sites-available/000-default.conf
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
-```
-
-```
-a2enmod jk
-
-apache2ctl configtest
 ```
 
 <br>
@@ -192,6 +211,20 @@ netstat -anlp | grep 8009
 ----
  
 ## 4. WEB Server - Service Check
+
+```
+a2dismod jk
+
+mv /etc/apache2/mods-available/httpd-jk.conf /etc/apache2/mods-available/jk.conf
+
+cd /etc/libapache2-mod-jk/
+
+ln -f -s ../apache2/mods-available/jk.conf httpd-jk.conf
+
+a2enmod jk
+
+apache2ctl configtest
+```
 
 ```
 systemctl restart apache2
