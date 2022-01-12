@@ -144,7 +144,9 @@ EOF
 ```
 apt -y update
 
-apt -y install mysql-server
+apt -y install mariadb-server
+
+sed -i "s/bind-address            = 127.0.0.1/bind-address            = 0.0.0.0/g" /etc/mysql/mariadb.conf.d/50-server.cnf
 ```
 
 ```
@@ -161,6 +163,8 @@ mysql_secure_installation
 mysql -u root -p
 
 create database test;
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'PASSWORD';
 
 exit;
 ```
