@@ -333,3 +333,4 @@ vim /usr/local/tomcat9/webapps/source/db.jsp
 </body>
 </html>
 ```
+![U_Apache_tomcat 03](https://user-images.githubusercontent.com/42735894/149132464-a221764c-3259-4561-8866-314ebde6f314.PNG)
