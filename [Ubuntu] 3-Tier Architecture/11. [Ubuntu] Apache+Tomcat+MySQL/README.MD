@@ -238,3 +238,91 @@ cat /var/log/apache2/mod_jk.log
 <br>
 
 ----
+
+## 5. DB Server - MySQl (MariaDB) Install
+
+```
+apt -y update
+
+apt -y install mysql-server
+```
+
+```
+systemctl restart mysql
+systemctl enable mysql
+systemctl status mysql
+```
+
+```
+mysql_secure_installation
+```
+
+```
+mysql -u root -p
+
+create database test;
+
+exit;
+```
+
+<br>
+
+----
+ 
+## 6. WAS Server - DB Connectation Check
+
+#### - https://downloads.mysql.com/archives/c-j/
+
+```
+wget https://downloads.mysql.com/archives/get/p/3/file/mysql-connector-java-8.0.26.tar.gz
+
+tar xvzf mysql-connector-java-8.0.26.tar.gz
+
+cd mysql-connector-java-8.0.26
+
+cp mysql-connector-java-8.0.26.jar /usr/local/tomcat9/lib/
+```
+
+```
+systemctl stop tomcat
+
+systemctl start tomcat
+
+netstat -anlp | grep 8080
+
+netstat -anlp | grep 8009
+```
+
+```
+vim /usr/local/tomcat9/webapps/source/db.jsp
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="java.sql.*"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+ <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>DB Connection Test</title>
+</head>
+<body>
+        <%
+                String DB_URL = "jdbc:mysql://192.168.219.200:3306/test";
+                String DB_USER = "root";
+                String DB_PASSWORD= "1234";
+
+                Connection conn;
+                Statement stmt;
+
+                try {
+                        Class.forName("com.mysql.jdbc.Driver");
+                        conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+                        stmt = conn.createStatement();
+                        conn.close();
+                        out.println("MySql jdbc test: connect ok!!");
+                } catch(Exception e) {
+                        out.println(e.getMessage());
+                }
+        %>
+</body>
+</html>
+```
