@@ -231,7 +231,8 @@ systemctl restart apache2
 
 cat /var/log/apache2/mod_jk.log
 ```
-
+![U_Apache_tomcat 01](https://user-images.githubusercontent.com/42735894/149080454-42dd2c75-e7c3-4fe7-a4fc-ad63ac6aaa15.PNG)
+![U_Apache_tomcat 02](https://user-images.githubusercontent.com/42735894/149080459-996fc386-d18d-4334-b7b3-df7a0d339516.PNG)
 
 
 <br>
