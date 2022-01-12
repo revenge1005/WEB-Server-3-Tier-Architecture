@@ -11,12 +11,6 @@ EOF
 ```
 
 ```
-add-apt-repository ppa:ondrej/apache2 -y
-
-apt update
-
-apt -y upgrade
-
 apt -y install apache2 libapache2-mod-jk
 ```
 
